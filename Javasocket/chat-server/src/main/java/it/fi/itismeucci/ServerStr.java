@@ -21,7 +21,8 @@ public class ServerStr {
         try 
         {
             System.out.println("1 Server partito in esecuzione...");
-            server = new ServerSocket(6789);
+            if(server == null)
+                server = new ServerSocket(6789);
             client = server.accept();
             server.close();
             inDalClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
